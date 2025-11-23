@@ -199,22 +199,99 @@
     }
 
     .about-content {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
+    }
+
+    .about-text-wrapper {
+      order: 1;
     }
 
     .about-text {
       color: #d0d0d0;
       font-size: 1rem;
       line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+
+    .about-highlight-item {
+      color: #e0e0e0;
+      font-size: 1rem;
+      line-height: 1.8;
+      padding: 0.75rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .about-highlight-item::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #4fc3f7;
+      font-weight: bold;
+    }
+
+    .about-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .about-button {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .about-button-primary {
+      background-color: #4fc3f7;
+      color: #ffffff;
+    }
+
+    .about-button-primary:hover {
+      background-color: #29b6f6;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(79, 195, 247, 0.3);
+    }
+
+    .about-button-secondary {
+      background-color: transparent;
+      color: #4fc3f7;
+      border-color: #4fc3f7;
+    }
+
+    .about-button-secondary:hover {
+      background-color: rgba(79, 195, 247, 0.1);
+      color: #29b6f6;
+      border-color: #29b6f6;
     }
 
     .about-image {
       width: 100%;
       max-width: 500px;
-      margin: 2rem auto;
+      margin: 2rem auto 0;
       border-radius: 12px;
       overflow: hidden;
+      order: 2;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
     /* CSS:ABOUT-END */
 
@@ -304,11 +381,21 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
-        align-items: center;
+        align-items: start;
+      }
+
+      .about-text-wrapper {
+        order: 1;
       }
 
       .about-image {
         margin: 0;
+        order: 2;
+      }
+
+      .about-actions {
+        flex-direction: row;
+        gap: 1.5rem;
       }
 
       .nav {
@@ -376,18 +463,27 @@
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
         <div class="container">
-          <h2 id="about-heading" class="section-title">關於我（之後會用 Section SDD 替換）</h2>
+          <h2 id="about-heading" class="section-title">關於我</h2>
           <div class="about-content">
-            <div>
+            <div class="about-text-wrapper">
               <p class="about-text">
-                這裡目前是 About 區的占位內容，之後會用另一個 Prompt 產生正式內容，包含個人背景、經歷、專業領域等詳細介紹。請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。
+                我目前專注於前端開發工作，同時也進行教學與接案服務。主要技能包括 HTML、CSS、JavaScript、React、Vue.js 等現代網頁開發技術，熟悉響應式設計與使用者體驗優化。
               </p>
               <p class="about-text">
-                開發者請注意：之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。
+                我重視團隊溝通與協作，喜歡透過教學分享知識與經驗，並且習慣將複雜的概念用清楚易懂的方式呈現給他人。我相信好的程式碼不僅要能運作，更要能讓團隊成員容易理解與維護。
               </p>
+              <ul class="about-highlights">
+                <li class="about-highlight-item">豐富的前端開發經驗，能協助解決各種技術難題</li>
+                <li class="about-highlight-item">提供專業的技術教學與程式碼審查服務</li>
+                <li class="about-highlight-item">協助建立現代化、易維護的前端專案架構</li>
+              </ul>
+              <div class="about-actions">
+                <a href="#projects" class="about-button about-button-primary">查看作品集</a>
+                <a href="#contact" class="about-button about-button-secondary">聯絡我</a>
+              </div>
             </div>
             <div class="about-image">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" alt="專業開發者工作環境" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop" alt="專注於寫程式的工程師" loading="lazy" />
             </div>
           </div>
         </div>
